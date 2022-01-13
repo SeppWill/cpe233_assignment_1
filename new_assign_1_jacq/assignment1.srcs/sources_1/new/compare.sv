@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 01/07/2022 12:03:59 PM
+// Create Date: 01/10/2022 08:52:57 PM
 // Design Name: 
-// Module Name: bubble_sort
+// Module Name: compare
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module bubble_sort(
-    input list
+module compare(
+    input logic [7:0] x,
+    input logic [7:0] y,
+    output logic gt
     );
+    always_comb
+    begin
+    if (y < x)
+     gt = 1;
+    else
+     gt = 0;
+end
 endmodule

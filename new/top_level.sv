@@ -22,7 +22,7 @@
 
 module top_level(
     input BTN,
-    input CLK,
+    input clk,
     output ANODES,
     output SEGMENTS,
     output LEDS
@@ -37,37 +37,51 @@ module top_level(
     logic CNT_14;
     logic CNT_CLR;
     logic CNT_15; // enter button
-
+    logic CLK;
     logic gt;
     logic RAM_WE; // LED password state indication
     logic CNT_EN; // LED password state indication
     logic WS; // LED password state indication
     logic DS;  // password recording state
     logic SORTED_CLR;
+    logic btn;
     //clk divider and debounce
+    
+    clk_div clk_div(.clk(clk), .sclk(CLK));
+    debounce_one_shot one_shot(.CLK(CLK), .BTN(BTN), .DB_BTN(btn));
+    
     cntr_udclr_nb counter (.clk(CLK), .clr(CNT), .up(CNT_EN), .count(cnt));
+  
     
-    Rom_16x8 ROM (.clk(CLK), .ADDR(cnt), .DATA(data));
+    Rom_16x8 ROM (.CLK(CLK), .ADDR(cnt), .DATA(data));
     
     
-    ram ram (.CLK(CLK), .WR(), .DIN(t1), .ADDRX(cnt), .ADDRY(cnt+1), .DX_OUT(x), .DY_OUT(y));
+    ram ram (.CLK(CLK), .WR(RAM_WE), .DIN(t1), .ADDRX(cnt), .ADDRY(cnt+1), .DX_OUT(x), .DY_OUT(y));
     
     mux mux4_2(.ws(), .zero(data), .one(t2), .two(y), .D(t1)); // ws from fsm and one from x reg
-    mux2_1 mux2_1(.DS(), .zero(x), .one(data));
+    mux2_1 mux2_1(.DS(DS), .zero(x), .one(data));
     
     logic Done = ~t3 + CNT_14;
     
-    FSM_CHECKER fsm (.BTN(BTN), .gt(gt),.CNT_15(), .Done(Done), .CNT_14(CNT_14), .RAM_WE(RAM_WE), .CNT_EN(CNT_EN), .CNT_CLR(CNT_CLR), .WS(WS), .DS(DS), .SORTED_CLR(SORTED_CLR));
+    FSM_CHECKER fsm (.BTN(btn), .gt(gt),.CNT_15(CNT_15), .Done(Done), .CNT_14(CNT_14), .RAM_WE(RAM_WE), .CNT_EN(CNT_EN), .CNT_CLR(CNT_CLR), .WS(WS), .DS(DS), .SORTED_CLR(SORTED_CLR));
     
     x_reg x_reg (.X(x), .CLK(CLK), .D(t2));
-    sort_reg sorted_reg (.LD(), .sorted_CLR(SORTED_CLR), .CLK(CLK), .D(t3)); // LD will come from compare 
+    sort_reg sorted_reg (.LD(gt), .sorted_CLR(SORTED_CLR), .CLK(CLK), .D(t3)); // LD will come from compare 
     
    
-    //compare
-    
-    //display
- 
-    
+    compare compare (.x(x), .y(y), .gt(gt)); 
+    SevSegDisp sseg(.CLK(clk), .MODE(0), .DATA_IN(x), .CATHODES(CATHODES), .ANODES(ANODES));
+    always_comb
+    begin
+      if (cnt == 14)
+        CNT_14 = 1;
+      else
+       CNT_14 = 0;
+      if (cnt == 15)
+         CNT_15 =1;
+      else
+         CNT_15 = 0;
+    end
     
     
 endmodule
