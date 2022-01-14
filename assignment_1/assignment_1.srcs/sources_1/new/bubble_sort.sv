@@ -27,18 +27,18 @@ module bubble_sort(
     output [15:0] led
     );
     
-    wire sclk, clr, up, co, we, ds, gt, done;
+    wire sclk, clr, up, co, we, ds, gt, done, t;
     wire [1:0] ws;
-    wire [2:0] PS;
-    wire [3:0] count, ROM_ADDR;
-    wire [4:0] X_ADDR, Y_ADDR;
+    wire [3:0] ROM_ADDR;
+    wire [4:0] count, count1, count2;
+    reg [4:0] X_ADDR, Y_ADDR;
     wire [7:0] ROM_DATA, XD_OUT, YD_OUT;
     reg [7:0] D_IN, disp_DATA, X_REG;
     reg sorted;
     
-    /*clk_div CLOCK (
-        .clk(clk),
-        .sclk(sclk) );*/
+    //clk_div CLOCK (
+    //    .clk(clk),
+    //    .sclk(sclk) );
         
     assign sclk = clk;
         
@@ -72,38 +72,40 @@ module bubble_sort(
         .ws(ws),
         .ds(ds),
         .clk(sclk),
-        .PS(PS) );
+        .t(t) );
         
-    SevSegDisp sseg(
-        .CLK(clk),
-        .MODE(1'b0),
-        .DATA_IN(disp_DATA),
-        .CATHODES(seg),
-        .ANODES(an) );
+    univ_sseg sseg (
+        .cnt1(disp_DATA),
+        .valid(1),
+        .mod_sel(2'b10),
+        .clk(clk),
+        .ssegs(seg),
+        .disp_en(an) );
         
-    cntr_udclr_nb #(4) counter (
+    cntr_udclr_nb #(5) counter (
         .clk(sclk),
         .clr(clr),
         .up(up),
         .count(count),
-        .rco(co) );
-        
+        .rco() );
     
+    assign co = Y_ADDR[4] | count[4];
+
     always @ (*)
     begin
         if (ws == 2'b00)
             D_IN = ROM_DATA;
+        else if (ws == 2'b01)
+            D_IN = X_REG;
         else if (ws == 2'b10)
             D_IN = YD_OUT;
-        else if (ws == 2'b01)
-            D_IN = XD_OUT;
         else
             D_IN = X_REG;
      end
      
      always @ (posedge sclk)
      begin
-        if (ds == 0)
+        if (ds == 1)
             disp_DATA = XD_OUT;
         else
             disp_DATA = ROM_DATA;
@@ -122,26 +124,33 @@ module bubble_sort(
     
     assign done = ~sorted & co;
     
-    /*assign X_ADDR = count;
-    
-    rca_nb #(5) rca (
-        .a(X_ADDR),
+    rca_nb #(5) rca1 (
+        .a(count),
         .b(0),
         .cin(1'b1),
-        .sum(Y_ADDR) );*/
-        
-    assign Y_ADDR = count;
+        .sum(count1) );
     
-    rca_nb #(4) rca (
+    rca_nb #(5) rca2 (
         .a(count),
-        .b(4'b1111),
+        .b(5'b11111),
         .cin(1'b0),
-        .sum(X_ADDR[3:0]) );
+        .sum(count2) );
+        
+    always @ (*)
+    begin
+        if (t == 1)
+        begin
+            Y_ADDR = count;
+            X_ADDR = count2;
+        end
+        else
+        begin
+            X_ADDR = count;
+            Y_ADDR = count1;
+        end
+    end
     
-    assign led[7:5] = PS;
     assign led[3:0] = X_ADDR;
-    assign led[15:8] = XD_OUT;
-    assign X_ADDR[4] = 0;
     
     always @ (posedge sclk)
     begin

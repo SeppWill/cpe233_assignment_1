@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../assignment_1.srcs/sources_1/imports/seppl/multiplier/multiplier.srcs/sources_1/imports/imports/Downloads/FSM_Template v1_00.v" \
+"../../../../assignment_1.srcs/sources_1/imports/Vivado Sources/univ_sseg_v1_05.v" \
+
+sv xil_defaultlib  \
+"../../../../assignment_1.srcs/sources_1/new/bubble_sort.sv" \
+"../../../../assignment_1.srcs/sources_1/new/comp.sv" \
+"../../../../assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/counter.sv" \
+"../../../../assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/gen_ram.sv" \
+"../../../../assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/rca.sv" \
+"../../../../assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/rom.sv" \
+
+verilog xil_defaultlib  \
+"../../../../assignment_1.srcs/sim_1/imports/new/comparator.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

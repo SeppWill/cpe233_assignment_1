@@ -5,7 +5,7 @@
 module clk_div (  input clk,
                   output sclk);
 
-  integer MAX_COUNT = 2200; 
+  integer MAX_COUNT = 6000000; // 2200; 
   integer div_cnt =0;
   reg tmp_clk=0; 
 

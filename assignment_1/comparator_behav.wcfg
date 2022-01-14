@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="comparator_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="comparator" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1726001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="107"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/comparator/btn" type="logic">
+      <obj_property name="ElementShortName">btn</obj_property>
+      <obj_property name="ObjectShortName">btn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/ram/r_memory" type="array">
+      <obj_property name="ElementShortName">r_memory[31:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">r_memory[31:0][7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/D_IN" type="array">
+      <obj_property name="ElementShortName">D_IN[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D_IN[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/X_ADDR" type="array">
+      <obj_property name="ElementShortName">X_ADDR[4:0]</obj_property>
+      <obj_property name="ObjectShortName">X_ADDR[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/Y_ADDR" type="array">
+      <obj_property name="ElementShortName">Y_ADDR[4:0]</obj_property>
+      <obj_property name="ObjectShortName">Y_ADDR[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/ROM/DATA" type="array">
+      <obj_property name="ElementShortName">DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/count" type="array">
+      <obj_property name="ElementShortName">count[4:0]</obj_property>
+      <obj_property name="ObjectShortName">count[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/fsm/PS" type="array">
+      <obj_property name="ElementShortName">PS[2:0]</obj_property>
+      <obj_property name="ObjectShortName">PS[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/fsm/NS" type="array">
+      <obj_property name="ElementShortName">NS[2:0]</obj_property>
+      <obj_property name="ObjectShortName">NS[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/co" type="logic">
+      <obj_property name="ElementShortName">co</obj_property>
+      <obj_property name="ObjectShortName">co</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/up" type="logic">
+      <obj_property name="ElementShortName">up</obj_property>
+      <obj_property name="ObjectShortName">up</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/clr" type="logic">
+      <obj_property name="ElementShortName">clr</obj_property>
+      <obj_property name="ObjectShortName">clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/comparator/sim/ROM/rom" type="array">
+      <obj_property name="ElementShortName">rom[0:15][7:0]</obj_property>
+      <obj_property name="ObjectShortName">rom[0:15][7:0]</obj_property>
+   </wvobject>
+</wave_config>

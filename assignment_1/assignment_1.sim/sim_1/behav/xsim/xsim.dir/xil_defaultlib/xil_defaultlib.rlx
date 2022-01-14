@@ -1,0 +1,18 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/seppl/assignment_1/assignment_1.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sim_1/imports/new/comparator.v,1642064116,verilog,,,,comparator,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/SevSeg/BCD.sv,1547001420,systemVerilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/SevSeg/CathodeDriver.sv,,BCD,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/SevSeg/CathodeDriver.sv,1547001420,systemVerilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/SevSeg/SevSegDisp.sv,,CathodeDriver,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/SevSeg/SevSegDisp.sv,1547001420,systemVerilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/new/bubble_sort.sv,,SevSegDisp,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/Vivado Sources/univ_sseg_v1_05.v,1634618527,verilog,,,,clk_divder;cnt_convert_14b;cnt_convert_7b;univ_sseg,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/CLK_DIV_FS.v,1641769742,verilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/multiplier/multiplier.srcs/sources_1/imports/imports/Downloads/FSM_Template v1_00.v,,clk_div,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/counter.sv,1642066502,systemVerilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/gen_ram.sv,,cntr_udclr_nb,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/gen_ram.sv,1641769742,systemVerilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/rca.sv,,ram,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/rca.sv,1641769742,systemVerilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/rom.sv,,rca_nb,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/rom.sv,1641769742,systemVerilog,,,,Rom_16x8,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/multiplier/multiplier.srcs/sources_1/imports/imports/Downloads/FSM_Template v1_00.v,1642140446,verilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/Vivado Sources/univ_sseg_v1_05.v,,fsm_template,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/new/bubble_sort.sv,1642139477,systemVerilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/new/comp.sv,,bubble_sort,,uvm,,,,,,
+C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/new/comp.sv,1641888194,systemVerilog,,C:/Users/seppl/assignment_1/assignment_1.srcs/sources_1/imports/seppl/Documents/GitHub/cpe233_assignment_1/support_srcs/counter.sv,,comp,,uvm,,,,,,
