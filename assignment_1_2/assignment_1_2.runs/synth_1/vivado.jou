@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Jan 14 19:50:39 2022
+# Process ID: 20996
+# Current directory: C:/Users/seppl/assignment_1_2/assignment_1_2.runs/synth_1
+# Command line: vivado.exe -log RAM_Accumulator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAM_Accumulator.tcl
+# Log file: C:/Users/seppl/assignment_1_2/assignment_1_2.runs/synth_1/RAM_Accumulator.vds
+# Journal file: C:/Users/seppl/assignment_1_2/assignment_1_2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source RAM_Accumulator.tcl -notrace
